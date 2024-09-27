@@ -4,14 +4,14 @@
 int main()
 {
     int n;
+    printf("Combien de livres souhaitez-vous ajouter ? :" );
+    scanf("%d",&n);
     int quantite[];
     float prix[];
     char titre[][50];
     char auteur[][50];
     char (10) metre_a_jour;
     char (4) supr;
-    printf("Combien de livres souhaitez-vous ajouter ? :" );
-    scanf("%d",&n);
     for (int i=0;i<n;i++){
         printf("Entrer le titre du livre",i+1);
         scanf("%c",&titre[i]);
@@ -33,7 +33,7 @@ int main()
         printf("la quantite actuelle de livre %c est : %d",titre[i],quantite[i]);
         printf("veuillez saiser la nouvelle quantite :");
         scanf("%d",&quantite[i]);
-        printf("la nouvelle quantite a été enregistrer avec succés");
+        printf("la nouvelle quantite a Ã©tÃ© enregistrer avec succÃ©s");
     }
     printf("veuillez saiser le titre de livre qu'est tu as doit suppreme :");
     scanf("%c",&supr);
@@ -48,7 +48,7 @@ int main()
             }
             n--;
         }
-        printf("le livre %c a été suprime avec succes.\n",titre[i]);
+        printf("le livre %c a Ã©tÃ© suprime avec succes.\n",titre[i]);
         break;
     }
     if (supr!==titre[i]){
