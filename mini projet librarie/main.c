@@ -22,7 +22,7 @@ int main()
         printf("Entrer la quantité des livres :",i+1);
         scanf("%d",&quantite[i]);
     }
-    printf("\nles livres ce qu'est enregistres est :\n");
+    printf("\nles livres ce qu'est enregistres est %d :\n");
     for (int i=0;i<n;i++){
         printf("Livre %d : Titre = %s .\n Auteur = %s . \n Prix = %f . \n quantite = %d ",i+1,titre[i],auteur[i],prix[i],quantite[i]);
     }
@@ -39,7 +39,7 @@ int main()
     fgets("%s",&supr);
     for (int i=0;i<n;i++){
         if (strcmp (supr,titre[i])==0){
-            printf("la quantite actuelle de livre  %s est : %d",titre[i],quantite(i));
+            printf("la quantite actuelle de livre  %s est : %d",titre[i],quantite[i]);
             for (int i=0;i<n;i++){
                 fgets("%s",titre);
                 fgets("%s",auteur);
