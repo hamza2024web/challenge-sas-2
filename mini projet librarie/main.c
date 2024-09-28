@@ -4,53 +4,60 @@
 int main()
 {
     int n;
-    printf("Combien de livres souhaitez-vous ajouter ? :" );
+    printf("Combien de livres souhaitez-vous ajouter ? : " );
     scanf("%d",&n);
     int quantite[n];
     float prix[n];
-    char titre[n][50];
-    char auteur[n][50];
-    char metre_a_jour[50];
-    char supr[50];
+    char titre[n][100];
+    char auteur[n][100];
+    char metre_a_jour[100];
+    char supr[100];
+    char recherche[100];
     for (int i=0;i<n;i++){
-        printf("Entrer le titre du livre",i+1);
-        fgets("%s",&titre);
-        printf("Entrer le prix du livre ",i+1);
+        printf("Entrer le titre du livre :\n",i+1);
+        fgets(titre[i],100,stdin);
+        printf("Entrer le prix du livre :\n",i+1);
         scanf("%f",&prix[i]);
-        printf("Entrer l'auteur du livre ",i+1);
-        fgets("%s",&auteur);
-        printf("Entrer la quantité des livres :",i+1);
+        printf("Entrer l'auteur du livre :\n",i+1);
+        fgets(titre[i],100,stdin);
+        printf("Entrer la quantité des livres :\n",i+1);
         scanf("%d",&quantite[i]);
     }
     printf("\nles livres ce qu'est enregistres est %d :\n");
     for (int i=0;i<n;i++){
         printf("Livre %d : Titre = %s .\n Auteur = %s . \n Prix = %f . \n quantite = %d ",i+1,titre[i],auteur[i],prix[i],quantite[i]);
     }
+    printf("veuillez saiser le livre que vous cherchez :");
+    fgets(recherche,100,stdin);
+    if(strcmp(recherche,titre[i])==0){
+        printf("le titre que vous cherchez est %s\n :",titre[i]);
+        break;
+    }
     printf("veuillez saiser le titre du livre qu'tu souhaite mettre a jour ca quantite ? :");
-    fgets("%s",&metre_a_jour);
-    for (int i=0;i<n;i++)
+    fgets(metre_a_jour,100,stdin);
+    for (int i=0;i<n;i++){
         if (strcmp(metre_a_jour,titre[i])==0){
         printf("la quantite actuelle de livre %s est : %d",titre[i],quantite[i]);
         printf("veuillez saiser la nouvelle quantite :");
         scanf("%d",&quantite[i]);
-        printf("la nouvelle quantite a été enregistrer avec succés");
+        printf("la nouvelle quantite a été enregistrer avec succésn.\n");
+        break;
+        }
     }
-    printf("veuillez saiser le titre de livre qu'est tu as doit suppreme :");
-    fgets("%s",&supr);
+    printf("veuillez saiser le titre du livre a supprimer :");
+    fgets(supr,100,stdin);
     for (int i=0;i<n;i++){
         if (strcmp (supr,titre[i])==0){
-            printf("la quantite actuelle de livre  %s est : %d",titre[i],quantite[i]);
-            for (int i=0;i<n;i++){
-                fgets("%s",titre);
-                fgets("%s",auteur);
-                scanf("%f",prix[i]);
-                scanf("%d",quantite[i]);
-            }
-            n--;
+            printf("livre %s supprime avec succes.\n",titre[i]);
+            for (int j=i;j<n-1;j++){
+                strcpy(titre[j],titre[j+1]);
+                strcpy([auteur[j],auteur[j+1]);
+                strcpy((prix[j],prix[j+1]));
+                strcpy(quantite[j],qauntite[j+1]);
         }
-        printf("le livre %s a été suprime avec succes.\n",titre[i]);
-        break;
+            n--;
     }
+    break;
     if (strcmp(supr,titre)!=0){
         printf("le livre n'est pas trouve.\n");
     }
