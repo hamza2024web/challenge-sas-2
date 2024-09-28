@@ -54,6 +54,7 @@ int main()
                 strcpy([auteur[j],auteur[j+1]);
                 strcpy((prix[j],prix[j+1]));
                 strcpy(quantite[j],qauntite[j+1]);
+                printf("le livre a été supprimé avec succes %s \n.",titre[i]);
         }
             n--;
     }
